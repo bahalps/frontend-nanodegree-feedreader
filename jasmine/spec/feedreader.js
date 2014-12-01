@@ -109,6 +109,10 @@ $(function () {
             loadFeed(index, done);
             index++;
         });
+        
+        afterAll(function(done) {
+            loadFeed(0, done);
+        });
 
         it('feed 0 adds entries', function (done) {
             var entries = $('.feed a').children('.entry');
@@ -142,7 +146,7 @@ $(function () {
         var afterContent;
 
         beforeEach(function(done) {
-            beforeContent = $('.feed').children();
+            beforeContent = $('.feed a').children();
             loadFeed(selection, done);
             selection++;
         });
@@ -152,25 +156,25 @@ $(function () {
          * Remember, loadFeed() is asynchronous.
          */
         it('should change', function (done) {
-            afterContent = $('.feed').children();
+            afterContent = $('.feed a').children();
             expect(beforeContent).not.toEqual(afterContent);
             done();
         });
         
         it('should change', function (done) {
-            afterContent = $('.feed').children();
+            afterContent = $('.feed a').children();
             expect(beforeContent).not.toEqual(afterContent);
             done();
         });
         
         it('should change', function (done) {
-            afterContent = $('.feed').children();
+            afterContent = $('.feed a').children();
             expect(beforeContent).not.toEqual(afterContent);
             done();
         });
         
         it('should change', function (done) {
-            afterContent = $('.feed').children();
+            afterContent = $('.feed a').children();
             expect(beforeContent).not.toEqual(afterContent);
             done();
         });
